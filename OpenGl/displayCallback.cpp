@@ -1,4 +1,7 @@
 #include <glut.h>
+#include <gl/GL.h>
+#include <gl/GLU.h>
+
 
 void MyDisplay()
 {
@@ -13,11 +16,14 @@ void MyDisplay()
 
 
 	glBegin(GL_POLYGON);
-
-	glVertex3f(-0.5, -0.5, 0.0);
+	glVertex3f(-0.5, -0.5,0.0);
+	glVertex3f( 0.5, -0.5, 0.0);
+	glVertex3f( 0.5,  0.5, 0.0);
+	glVertex3f(-0.5, 0.5, 0.0);
+	/*glVertex3f(-0.5, -0.5, 0.0);
 	glVertex3f(0.5, -0.5, 0.0);
 	glVertex3f(0.5, 0.5, 0.0);
-	glVertex3f(-0.5, 0.5, 0.0);
+	glVertex3f(-0.5, 0.5, 0.0);*/
 
 
 
@@ -37,6 +43,7 @@ void MyReshape(int NewWidth, int NewHeight)
 	//glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);//가시 부피 지정 (-1.0 ~ 1.0,-1.0 ~ 1.0,-1.0 ~ 1.0)까지 범위를 가짐
 
 }
+
 int main(int argc,char ** argv)
 {
 	glutInit(&argc, argv);						//glut라이브러리 초기화 & 윈도우 os와 연결하여 하나의 세션 형성
@@ -48,6 +55,7 @@ int main(int argc,char ** argv)
 	
 	glutReshapeFunc(MyReshape);
 	glutDisplayFunc(MyDisplay);
+
 	glutMainLoop();
 	return 0;
 }
