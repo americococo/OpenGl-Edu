@@ -10,21 +10,21 @@ void MyDisplay()
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glBegin(GL_POLYGON);
-		glColor3f(0.0, 0.5, 0.0);
-		glVertex3f(-1.0f + Delta, -0.5, 0.0);
-		glVertex3f(0.0f + Delta, -0.5, 0.0);
-		glVertex3f(0.0f + Delta, 0.5, 0.0);
-		glVertex3f(-1.0f + Delta, 0.5, 0.0);
+	glColor3f(0.0, 0.5, 0.0);
+	glVertex3f(-1.0f + Delta, -0.5, 0.0);
+	glVertex3f(0.0f + Delta, -0.5, 0.0);
+	glVertex3f(0.0f + Delta, 0.5, 0.0);
+	glVertex3f(-1.0f + Delta, 0.5, 0.0);
 	glEnd();
 	glutSwapBuffers();
-	
+
 
 }
-void MyTimmer(int value)
+void MyIdle()
 {
-	Delta += 0.001;
+	Delta = Delta + 0.001;
 	glutPostRedisplay();
-	glutTimerFunc(40, MyTimmer, 1);
+
 }
 
 int main(int argc, char ** argv)
@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
 
 
 	glutDisplayFunc(MyDisplay);
-	glutTimerFunc(40,MyTimmer,1);
+	glutIdleFunc(MyIdle);
 	glutMainLoop();
 	return 0;
 }
