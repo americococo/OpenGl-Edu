@@ -29,7 +29,7 @@ void MyDisplay()
 
 
 
-	glLineWidth(3.0f);
+	glLineWidth(130.0f);
 
 	glBegin(GL_LINES);
 	glVertex3f(-1.0f + Delta, 1.0, 0.0);
