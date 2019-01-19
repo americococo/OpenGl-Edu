@@ -7,7 +7,10 @@ GLuint MyListID;
 void MyCreatList()
 {
 		
-	MyListID = glGenLists(10869);//
+	MyListID = glGenLists(3);
+	int ListSecond = MyListID + 1;
+	int Listthird = MyListID + 2;
+
 	glNewList(MyListID, GL_COMPILE);
 
 	glBegin(GL_POLYGON);
